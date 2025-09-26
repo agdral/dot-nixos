@@ -8,6 +8,6 @@
         ./services.nix
       ];
     };
-    nixosModules.tools = import ./tools.nix;
+    nixosModules.tools = ./tools.nix;
   };
 }
