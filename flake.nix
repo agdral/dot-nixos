@@ -5,7 +5,7 @@
     nixosModules.default = {...}: {
       imports = [
         ./packages
-        ./services.nix
+        ./services
       ];
     };
     nixosModules.tools = ./tools.nix;
