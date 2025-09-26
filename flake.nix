@@ -1,6 +1,6 @@
 {
   description = "Dotfile Default";
-  
+
   outputs = {...}: {
     nixosModules.default = {...}: {
       imports = [
@@ -8,5 +8,6 @@
         ./services.nix
       ];
     };
+    nixosModules.tools = import ./tools.nix;
   };
 }
