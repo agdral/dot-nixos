@@ -8,7 +8,6 @@
     atuin
     zoxide
     sd
-    fcp
     btop
     wget
     wev
