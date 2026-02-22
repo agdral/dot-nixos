@@ -22,10 +22,8 @@
     lib = nixpkgs.lib;
   in {
     nixosModules.default = {...}: {
-      _module.args = {
-        inherit solaar;
-      };
       imports = [
+        solaar.nixosModules.default
         ./packages
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
       ];
