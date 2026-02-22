@@ -15,7 +15,7 @@ in {
     hardware = {
       opentabletdriver = {
         enable = true;
-        package = pkgs-stable.opentabletdriver;
+        package = pkgs.opentabletdriver;
       };
     };
   };
