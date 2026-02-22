@@ -1,21 +1,24 @@
 {
   config,
   lib,
-  pkgs,
+  solaar,
   ...
 }:
 with lib; let
   cfg = config.dotNixos;
 in {
-  options.dotNixos.openssh = mkOption {
+  imports = [
+    solaar.nixosModules.default
+  ];
+  options.dotNixos.solaar = mkOption {
     type = types.bool;
     default = false;
   };
-  config = mkIf cfg.openssh {
+  config = mkIf cfg.solaar {
     services = {
-      openssh = {
+      solaar = {
         enable = true;
-        settings.PermitRootLogin = "yes";
+        window = "hide";
       };
     };
   };
