@@ -1,11 +1,12 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib; let
   cfg = config.dotNixos;
-  sonixFlaher = pkgs.callPackage ./sonixFlaher.nix;
+  sonixFlaher = pkgs.callPackage ./sonixFlasher.nix {};
 in {
   options.dotNixos.sonixQmk = mkOption {
     type = types.bool;

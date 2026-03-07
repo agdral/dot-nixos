@@ -14,11 +14,12 @@
     };
   };
 
-  outputs = {
+  outputs = inputs @ {
+    self,
     nixpkgs,
     import-tree,
     ...
-  } @ inputs: let
+  }: let
     lib = nixpkgs.lib;
   in {
     nixosModules.default = {...}: {
@@ -32,5 +33,9 @@
     };
 
     nixosModules.tools = ./tools.nix;
+
+    nixosConfigurations = import ./tester.nix {
+      inherit self inputs lib;
+    };
   };
 }
