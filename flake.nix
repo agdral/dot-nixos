@@ -22,12 +22,13 @@
     lib = nixpkgs.lib;
   in {
     nixosModules.default = {...}: {
+      config._module.args = {inherit inputs;};
+
       imports = [
         ./packages
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
         (import-tree.filter (lib.hasSuffix "/default.nix") ./customs)
       ];
-      config._module.args = {inherit inputs;};
     };
 
     nixosModules.tools = ./tools.nix;
