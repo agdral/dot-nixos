@@ -6,17 +6,15 @@
 }:
 with lib; let
   cfg = config.dotNixos;
+  agenix_pack = inputs.agenix.packages.x86_64-linux.default;
 in {
-  imports = [
-    inputs.agenix.nixosModules.default
-  ];
   options.dotNixos.agenix = mkOption {
     type = types.bool;
     default = false;
   };
   config = mkIf cfg.agenix {
     environment.systemPackages = [
-      inputs.agenix.packages.x86_64-linux.default
+      agenix_pack
     ];
   };
 }
