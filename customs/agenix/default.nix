@@ -1,12 +1,12 @@
 {
   config,
   lib,
-  inputs,
+  pkgs,
   ...
 }:
 with lib; let
   cfg = config.dotNixos;
-  agenix_pack = inputs.agenix.packages.x86_64-linux.default;
+  agenix = pkgs.callPackage ./_agenix.nix {};
 in {
   options.dotNixos.agenix = mkOption {
     type = types.bool;
@@ -14,7 +14,7 @@ in {
   };
   config = mkIf cfg.agenix {
     environment.systemPackages = [
-      agenix_pack
+      agenix
     ];
   };
 }
