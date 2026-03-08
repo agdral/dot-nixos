@@ -18,15 +18,16 @@
     self,
     nixpkgs,
     import-tree,
+    agenix,
+    solaar,
     ...
   }: let
     lib = nixpkgs.lib;
   in {
-    nixosModules.default = {...}: {
-      _module.args = {
-        inherit inputs;
-      };
+    nixosModules.default = {
       imports = [
+        agenix.nixosModules.default
+        solaar.nixosModules.default
         ./packages
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
         (import-tree.filter (lib.hasSuffix "/default.nix") ./customs)
