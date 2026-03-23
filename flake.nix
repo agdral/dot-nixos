@@ -12,6 +12,10 @@
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixstable";
     };
+    firewalld-nix = {
+      url = "sourcehut:~prince213/firewalld-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -20,6 +24,7 @@
     import-tree,
     agenix,
     solaar,
+    firewalld-nix,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -28,6 +33,7 @@
       imports = [
         agenix.nixosModules.default
         solaar.nixosModules.default
+        firewalld-nix.nixosModules.default
         ./packages
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
         (import-tree.filter (lib.hasSuffix "/default.nix") ./customs)
