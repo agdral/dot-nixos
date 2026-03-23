@@ -20,7 +20,6 @@
     import-tree,
     agenix,
     solaar,
-    firewalld-nix,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -29,7 +28,6 @@
       imports = [
         agenix.nixosModules.default
         solaar.nixosModules.default
-        firewalld-nix.nixosModules.default
         ./packages
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
         (import-tree.filter (lib.hasSuffix "/default.nix") ./customs)
