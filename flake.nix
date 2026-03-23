@@ -34,8 +34,6 @@
       ];
     };
 
-    nixosModules.tools = ./customs/tools.nix;
-
     nixosConfigurations = import ./tester.nix {
       inherit self inputs lib;
     };

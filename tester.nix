@@ -3,9 +3,11 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  system = "x86_64-linux";
+in {
   tester = lib.nixosSystem {
-    system = "x86_64-linux";
+    inherit system ;
     specialArgs = {inherit inputs;};
     modules = [
       self.nixosModules.default
