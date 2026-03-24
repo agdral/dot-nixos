@@ -34,7 +34,7 @@
       ];
     };
 
-    nixosConfigurations = import ./tester.nix {
+    nixosConfigurations = import _tester/config.nix {
       inherit self inputs lib;
     };
   };
