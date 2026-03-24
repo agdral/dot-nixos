@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotNixos;
 in {
-  options.dotNixos.openssh = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.openssh = mkEnableOption "openssh";
   config = mkIf cfg.openssh {
     services = {
       openssh = {

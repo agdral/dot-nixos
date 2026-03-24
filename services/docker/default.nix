@@ -6,10 +6,7 @@
 with lib; let
   cfg = config.dotNixos;
 in {
-  options.dotNixos.docker = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.docker = mkEnableOption "docker";
   config = mkIf cfg.docker {
     virtualisation = {
       docker = {

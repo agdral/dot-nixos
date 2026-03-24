@@ -8,10 +8,7 @@ with lib; let
   cfg = config.dotNixos;
   sonixFlaher = pkgs.callPackage ./_sonixFlasher.nix {};
 in {
-  options.dotNixos.sonixQmk = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.sonixQmk = mkEnableOption "sonixQmk";
   config = mkIf cfg.sonixQmk {
     services.udev.packages = [
       (pkgs.writeTextFile {

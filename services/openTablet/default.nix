@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotNixos;
 in {
-  options.dotNixos.openTablet = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.openTablet = mkEnableOption "openTablet";
   config = mkIf cfg.openTablet {
     hardware = {
       opentabletdriver = {

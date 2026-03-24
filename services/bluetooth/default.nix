@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotNixos;
 in {
-  options.dotNixos.bluetooth = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.bluetooth = mkEnableOption "bluetooth";
   config = mkIf cfg.bluetooth {
     hardware = {
       bluetooth = {

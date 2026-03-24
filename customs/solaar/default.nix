@@ -6,10 +6,7 @@
 with lib; let
   cfg = config.dotNixos;
 in {
-  options.dotNixos.solaar = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.solaar = mkEnableOption "solaar";
   config = mkIf cfg.solaar {
     services = {
       solaar = {

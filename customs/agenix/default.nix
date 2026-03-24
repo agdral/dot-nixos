@@ -8,10 +8,7 @@ with lib; let
   cfg = config.dotNixos;
   agenix_pack = pkgs.callPackage ./_agenix.nix {};
 in {
-  options.dotNixos.agenix = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.agenix = mkEnableOption "agenix";
   config = mkIf cfg.agenix {
     environment.systemPackages = [
       agenix_pack

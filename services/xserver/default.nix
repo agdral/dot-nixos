@@ -1,16 +1,12 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 with lib; let
   cfg = config.dotNixos;
 in {
-  options.dotNixos.xserver = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotNixos.xserver = mkEnableOption "xserver";
   config = mkIf cfg.xserver {
     services = {
       xserver = {
