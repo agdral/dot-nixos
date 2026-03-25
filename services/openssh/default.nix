@@ -12,9 +12,11 @@ in {
     services = {
       openssh = {
         enable = true;
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-        PermitRootLogin = "prohibit-password";
+        settings = {
+          PasswordAuthentication = false;
+          KbdInteractiveAuthentication = false;
+          PermitRootLogin = "prohibit-password";
+        };
       };
     };
   };
