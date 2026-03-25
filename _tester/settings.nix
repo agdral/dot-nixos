@@ -2,6 +2,7 @@
   dotNixos = {
     bluetooth = true;
     docker = true;
+    podman = true;
     openTablet = true;
     openssh = true;
     pipewire = true;
