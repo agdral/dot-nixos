@@ -1,14 +1,12 @@
 {...}: {
   dotNixos = {
     bluetooth = true;
-    docker = true;
-    podman = true;
     openTablet = true;
     openssh = true;
     pipewire = true;
+    xserver = true;
+    agenix = true;
     solaar = true;
     sonixQmk = true;
-    agenix = true;
-    xserver = true;
   };
 }
