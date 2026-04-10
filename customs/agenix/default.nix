@@ -12,7 +12,7 @@ in {
   config = mkIf cfg.agenix {
     environment.systemPackages = [
       agenix_pack
-      age
+      pkgs.age
     ];
   };
 }
