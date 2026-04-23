@@ -9,5 +9,8 @@
     zsh
     fish
     nushell
+    starship
+    atuin
+    zoxide
   ];
 }
