@@ -12,5 +12,7 @@
     gita
     rsync
     unar
+    openssl
+    inetutils
   ];
 }
