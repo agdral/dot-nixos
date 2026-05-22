@@ -2,7 +2,7 @@
   description = "Dotfile Default";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
     import-tree.url = "github:vic/import-tree";
     nixstable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 

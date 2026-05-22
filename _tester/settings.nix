@@ -8,5 +8,6 @@
     agenix = true;
     solaar = true;
     sonixQmk = true;
+    responsively = true;
   };
 }
