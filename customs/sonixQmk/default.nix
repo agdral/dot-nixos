@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.dotNixos;
   sonixFlaher = pkgs.callPackage ./_sonixFlasher.nix {};
-  name = "sonixQMK";
+  name = "sonixQmk";
 in {
   options.dotNixos.${name} = mkEnableOption "${name}";
   config = mkIf cfg.${name} {
