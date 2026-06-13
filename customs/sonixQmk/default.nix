@@ -7,9 +7,10 @@
 with lib; let
   cfg = config.dotNixos;
   sonixFlaher = pkgs.callPackage ./_sonixFlasher.nix {};
+  name = "sonixQMK";
 in {
-  options.dotNixos.sonixQmk = mkEnableOption "sonixQmk";
-  config = mkIf cfg.sonixQmk {
+  options.dotNixos.${name} = mkEnableOption "${name}";
+  config = mkIf cfg.${name} {
     services.udev.packages = [
       (pkgs.writeTextFile {
         name = "qmk-udev-rules";

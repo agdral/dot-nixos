@@ -7,9 +7,10 @@
 with lib; let
   cfg = config.dotNixos;
   agenix_pack = pkgs.callPackage ./_agenix.nix {};
+  name = "agenix";
 in {
-  options.dotNixos.agenix = mkEnableOption "agenix";
-  config = mkIf cfg.agenix {
+  options.dotNixos.${name} = mkEnableOption "${name}";
+  config = mkIf cfg.${name} {
     environment.systemPackages = [
       agenix_pack
       pkgs.age

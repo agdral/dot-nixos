@@ -6,9 +6,10 @@
 }:
 with lib; let
   cfg = config.dotNixos;
+  name = "pipewire";
 in {
-  options.dotNixos.pipewire = mkEnableOption "pipewire";
-  config = mkIf cfg.pipewire {
+  options.dotNixos.${name} = mkEnableOption "${name}";
+  config = mkIf cfg.${name} {
     services = {
       pipewire = {
         enable = true;

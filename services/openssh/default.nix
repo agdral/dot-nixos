@@ -6,9 +6,10 @@
 }:
 with lib; let
   cfg = config.dotNixos;
+  name = "openssh";
 in {
-  options.dotNixos.openssh = mkEnableOption "openssh";
-  config = mkIf cfg.openssh {
+  options.dotNixos.${name} = mkEnableOption "${name}";
+  config = mkIf cfg.${name} {
     services = {
       openssh = {
         enable = true;

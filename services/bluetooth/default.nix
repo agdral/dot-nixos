@@ -6,9 +6,10 @@
 }:
 with lib; let
   cfg = config.dotNixos;
+  name = "bluetooth";
 in {
-  options.dotNixos.bluetooth = mkEnableOption "bluetooth";
-  config = mkIf cfg.bluetooth {
+  options.dotNixos.${name} = mkEnableOption "${name}";
+  config = mkIf cfg.${name} {
     hardware = {
       bluetooth = {
         enable = true;

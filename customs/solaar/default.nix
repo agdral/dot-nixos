@@ -5,9 +5,10 @@
 }:
 with lib; let
   cfg = config.dotNixos;
+  name = "solaar";
 in {
-  options.dotNixos.solaar = mkEnableOption "solaar";
-  config = mkIf cfg.solaar {
+  options.dotNixos.${name} = mkEnableOption "${name}";
+  config = mkIf cfg.${name} {
     services = {
       solaar = {
         enable = true;

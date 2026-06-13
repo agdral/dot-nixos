@@ -5,9 +5,10 @@
 }:
 with lib; let
   cfg = config.dotNixos;
+  name = "xserver";
 in {
-  options.dotNixos.xserver = mkEnableOption "xserver";
-  config = mkIf cfg.xserver {
+  options.dotNixos.${name} = mkEnableOption "${name}";
+  config = mkIf cfg.${name} {
     services = {
       xserver = {
         xkb = {

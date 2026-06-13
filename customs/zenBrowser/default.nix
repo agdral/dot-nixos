@@ -6,15 +6,14 @@
 }:
 with lib; let
   cfg = config.dotNixos;
-  name = "openTablet";
+  zenBrowser_pack = pkgs.callPackage ./_zenBrowser.nix {};
+  name = "zenBrowser";
 in {
   options.dotNixos.${name} = mkEnableOption "${name}";
   config = mkIf cfg.${name} {
-    hardware = {
-      opentabletdriver = {
-        enable = true;
-        package = pkgs.opentabletdriver;
-      };
-    };
+    environment.systemPackages = [
+      zenBrowser_pack
+    ];
   };
 }
+
