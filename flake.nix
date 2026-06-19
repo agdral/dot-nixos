@@ -7,7 +7,6 @@
     nixstable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     # Customs
-    agenix.url = "github:ryantm/agenix";
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixstable";
@@ -18,7 +17,6 @@
     self,
     nixpkgs,
     import-tree,
-    agenix,
     solaar,
     ...
   }: let
@@ -26,7 +24,6 @@
   in {
     nixosModules.default = {
       imports = [
-        agenix.nixosModules.default
         solaar.nixosModules.default
         ./packages
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
