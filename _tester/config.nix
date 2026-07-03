@@ -7,7 +7,6 @@
   system = "x86_64-linux";
 in {
   tester = lib.nixosSystem {
-    imports = [inputs.agenix.nixosModules.default];
     inherit system;
     modules = [
       {
