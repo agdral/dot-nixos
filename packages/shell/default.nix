@@ -14,5 +14,6 @@
     unar
     openssl
     inetutils
+    nix-prefetch-github
   ];
 }
