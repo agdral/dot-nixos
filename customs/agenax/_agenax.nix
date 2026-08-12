@@ -16,7 +16,7 @@ in
 stdenv.mkDerivation rec {
   pname = "agenix";
   version = "0.15.0";
-  src = replaceVars ./agenix.sh {
+  src = replaceVars ./agenax.sh {
     inherit ageBin version;
     jqBin = "${jq}/bin/jq";
     nixInstantiate = "${nix}/bin/nix-instantiate";
