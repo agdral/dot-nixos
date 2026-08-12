@@ -6,13 +6,13 @@
 }:
 with lib; let
   cfg = config.dotNixos;
-  agenix_pack = pkgs.callPackage ./_agenix.nix {};
-  name = "agenix";
+  agenax_pack = pkgs.callPackage ./_agenax.nix {};
+  name = "agenax";
 in {
   options.dotNixos.${name} = mkEnableOption "${name}";
   config = mkIf cfg.${name} {
     environment.systemPackages = [
-      agenix_pack
+      agenax_pack
       pkgs.age
     ];
   };

@@ -5,7 +5,7 @@
     openssh = true;
     pipewire = true;
     xserver = true;
-    agenix = true;
+    agenax = true;
     solaar = true;
     sonixQmk = true;
     responsively = true;

@@ -1,10 +1,11 @@
 {
-  description = "Dotfile Default";
+  description = "Nixos Dotfile";
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
-    import-tree.url = "github:vic/import-tree";
     nixstable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
+
+    import-tree.url = "github:vic/import-tree";
 
     # Customs
     solaar = {
