@@ -9,10 +9,13 @@ with lib; let
 in {
   options.dotNixos.${name} = mkEnableOption "${name}";
   config = mkIf cfg.${name} {
-    services = {
+    programs = {
       solaar = {
         enable = true;
-        window = "hide";
+        userService = {
+          enable = true;
+          window = "hide";
+        };
       };
     };
   };
