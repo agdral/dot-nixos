@@ -16,8 +16,8 @@ in {
         name = "qmk-udev-rules";
         destination = "/lib/udev/rules.d/50-qmk.rules";
         text = builtins.readFile (pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/SonixQMK/qmk_firmware/sn32_develop/util/udev/50-qmk.rules";
-          sha256 = "1b6l8gnqar24985blfipya29zdzr0cfpxi9mdp1xdcsf71s0phxk";
+          url = "https://github.com/SonixQMK/qmk_udev/releases/download/v0.1.24/50-qmk.rules";
+          sha256 = "0jmm8vm6rb4y1ans9d3v88zcyg1jn2rqa8fyb4ydnb2ngbv9nrb1";
         });
       })
     ];
