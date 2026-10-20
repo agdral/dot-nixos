@@ -7,7 +7,7 @@
 }:
 stdenv.mkDerivation {
   pname = "sonixFlasherC";
-  version = "2.0.8";
+  version = "3.0.0";
 
   src = fetchzip {
     url = "https://github.com/SonixQMK/SonixFlasherC/releases/download/3.0.0/sonixflasher-linux-x86_64.zip";
